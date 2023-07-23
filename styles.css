@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background-color: darkslategrey;
+}
+
+#main-container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    position: fixed;
+    font-size: 60px;
+    width: 100%;
+    background-color: azure;
+    text-align: left;
+    margin: auto 0;
+    padding-left: 20px;
+}
+
+#add-book-button {
+    font-weight: bold;
+    margin-top: 100px;
+    background-color: greenyellow;
+    justify-content: center;
+    font-size: large;
+    width: 200px;
+    height: 50px;
+}
+
+.bookCard {
+    font-weight: bold;
+    padding: 20px;
+    margin-left: 50%;
+    margin-right: 50%;
+    width: 400px;
+    height: 300px;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5%;
+    gap: 10px;
+}
+
+.bookCard p {
+    font-size: 40px;
+}
+
+.bookCard input {
+    font-weight: bold;
+    color: black;
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5%;
+}
+
+.bookCard button {
+    font-weight: bold;
+    font-size: 20px;
+}
