@@ -9,8 +9,12 @@
 <body>
     <h1>Library</h1>
     <div id="main-container">
-        <button id="add-book-button">+ Add book</button>
+        <button id="add-book-button" onclick="$('.overlay').show();">+ Add book</button>
+        <div class="overlay">
+            <div class="modal"></div>
+        </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

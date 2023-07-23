@@ -40,37 +40,50 @@ h1 {
     height: 50px;
 }
 
-.bookCard {
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.5);
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 600px;
     font-weight: bold;
-    padding: 20px;
-    margin-left: 50%;
-    margin-right: 50%;
-    width: 400px;
-    height: 300px;
-    background-color: aquamarine;
+    background-color:aqua;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 5%;
     gap: 10px;
+    z-index: 1000000 !important;
 }
 
-.bookCard p {
+.modal p {
     font-size: 40px;
 }
 
-.bookCard input {
+.modal input {
     font-weight: bold;
     color: black;
     width: 300px;
     height: 50px;
     padding: 5px;
     font-size: 20px;
-    border-radius: 5%;
+    border-radius: 7%;
+    border: none;
 }
 
-.bookCard button {
+.modal button {
     font-weight: bold;
     font-size: 20px;
 }
