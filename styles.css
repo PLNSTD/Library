@@ -13,11 +13,47 @@ body {
 }
 
 #main-container {
+    height: max-content;
     padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 20px;
+}
+
+#book-container {
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 200px;
+    width: 200px;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 5px;
+}
+
+.book-card .book-title {
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+}
+
+.book-card .book-author {
+    font-size: small;
 }
 
 h1 {
@@ -30,6 +66,10 @@ h1 {
     padding-left: 20px;
 }
 
+button {
+    border-radius: 3px;
+}
+
 #add-book-button {
     font-weight: bold;
     margin-top: 100px;
@@ -38,6 +78,7 @@ h1 {
     font-size: large;
     width: 200px;
     height: 50px;
+    border-radius: 5px;
 }
 
 .overlay {
@@ -86,4 +127,22 @@ h1 {
 .modal button {
     font-weight: bold;
     font-size: 20px;
+}
+
+.button-container {
+    width: inherit;
+    display: flex;
+    justify-content: space-around;
+}
+
+.status-button {
+    background-color: greenyellow;
+    width: 80px;
+    height: 30px;
+}
+
+.delete-button {
+    background-color:chocolate;
+    width: 80px;
+    height: 30px;
 }
