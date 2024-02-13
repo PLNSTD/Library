@@ -13,7 +13,8 @@ $('.overlay').on('click', function(e) {
 })
 
 addBookBtn.addEventListener('click', function(e) {
-    
+
+    const newBookForm = document.createElement('form');
     const addNewBookP = document.createElement('p');
     const titleInputField = document.createElement('input');
     const authorInputField = document.createElement('input');
@@ -21,23 +22,48 @@ addBookBtn.addEventListener('click', function(e) {
     const submitBtn = document.createElement('button');
 
     addNewBookP.textContent = 'Add new book';
-    titleInputField.setAttribute('placeholder', 'Title')
+    titleInputField.setAttribute('autofocus', 'true');
+    titleInputField.setAttribute('placeholder', 'Title');
+    titleInputField.setAttribute('maxlength', '30');
+    titleInputField.setAttribute('minlength', '1');
+    titleInputField.setAttribute('required', '');
     authorInputField.setAttribute('placeholder', 'Author');
+    authorInputField.setAttribute('maxlength', '20');
+    authorInputField.setAttribute('minlength', '1');
+    authorInputField.setAttribute('required', '');
     pagesInputField.setAttribute('placeholder', 'Pages');
+    pagesInputField.setAttribute('min', '1');
+    pagesInputField.setAttribute('max', '1000');
+    pagesInputField.setAttribute('maxlength', '4');
+    pagesInputField.setAttribute('type', 'number');
+    pagesInputField.setAttribute('required', '');
+    pagesInputField.addEventListener('keypress', (e) => {
+        if (e.key < '0' || e.key > '9') {
+            e.preventDefault();
+        }
+    })
+    submitBtn.setAttribute('type', 'submit');
     submitBtn.textContent = 'Submit';
     submitBtn.classList.add('submit-button');
-    submitBtn.addEventListener('click', function(e) {
+
+    newBookForm.addEventListener('submit', function(e) {
         const newBook = new Book(titleInputField.value, authorInputField.value, pagesInputField.value);
         addBookToLibrary(newBook);
         modal.textContent = '';
         $('.overlay').hide();
+    });
+
+    submitBtn.addEventListener('click', (e) => {
+        newBookForm.classList.add('submitted');
+        newBookForm.blur();
     })
 
-    modal.appendChild(addNewBookP);
-    modal.appendChild(titleInputField);
-    modal.appendChild(authorInputField);
-    modal.appendChild(pagesInputField);
-    modal.appendChild(submitBtn);
+    newBookForm.appendChild(addNewBookP);
+    newBookForm.appendChild(titleInputField);
+    newBookForm.appendChild(authorInputField);
+    newBookForm.appendChild(pagesInputField);
+    newBookForm.appendChild(submitBtn);
+    modal.appendChild(newBookForm);
 });
 
 function Book(bookTitle, bookAuthor, bookPages) {

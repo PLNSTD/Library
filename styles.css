@@ -122,11 +122,34 @@ button {
     font-size: 20px;
     border-radius: 7%;
     border: none;
+    transition: background-color 1000ms ease-in-out;
 }
 
 .modal button {
     font-weight: bold;
     font-size: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form.submitted input:valid {
+    border: 2px solid rgb(0, 128, 0);
+    background-color: rgba(42, 189, 42, 0.5);
+}
+
+form.submitted input:invalid:not(:focus) {
+    border: 2px solid red;
+    background-color: rgba(196, 106, 106, 0.9);
+}
+
+form.submitted input:invalid:not(:focus)::placeholder {
+    color: black;
 }
 
 .button-container {
