@@ -55,7 +55,6 @@ addBookBtn.addEventListener('click', function(e) {
 
     submitBtn.addEventListener('click', (e) => {
         newBookForm.classList.add('submitted');
-        newBookForm.blur();
     })
 
     newBookForm.appendChild(addNewBookP);
